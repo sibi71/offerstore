@@ -41,7 +41,6 @@ const ContactUs = ({discountProducts}) => {
   return (
     <Layout title="Contact Us" description="This is contact us page">
     <Storelogo />
-    <FeatureCategory />
     <div className="flex justify-between">
        <Sliderbar />
        {storeCustomizationSetting?.home?.discount_product_status && (

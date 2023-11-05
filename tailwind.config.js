@@ -7,9 +7,7 @@ module.exports = {
   ],
 
   theme: {
-    colors: {
-            "bg-emerald":"#f15a29"
-    },
+   
 
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],

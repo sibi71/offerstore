@@ -26,7 +26,7 @@ const pages = [
   //   icon: FiUser,
   // },
   {
-    title: "offer-page",
+    title: "Coupons",
     href: "/offer",
     icon: FiGift,
   },
@@ -41,12 +41,12 @@ const pages = [
     icon: FiHelpCircle,
   },
   {
-    title: "about-us-page",
+    title: "Store",
     href: "/about-us",
     icon: FiUsers,
   },
   {
-    title: "contact-us-page",
+    title: "Offers",
     href: "/contact-us",
     icon: FiPhoneIncoming,
   },

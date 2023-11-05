@@ -14,6 +14,9 @@
   background-color: #fff;
   transition: border 0.15s ease;
 }
+.bg-emerald-500{
+  background-color: #f15a29;
+} 
 .c-h-65vh {
   height: 65vh;
 }
@@ -1374,6 +1377,7 @@ p:not(:last-of-type) {
   background: #10b981 !important;
   color: #e2e8f0;
 }
+
 /* sliderbar */
 .sliderbar{
   width: 22vw;

@@ -9,6 +9,7 @@ import { UserContext } from '@context/UserContext';
 import LoginModal from '@component/modal/LoginModal';
 import { SidebarContext } from '@context/SidebarContext';
 import CategoryDrawer from '@component/drawer/CategoryDrawer';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 const MobileFooter = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -48,7 +49,7 @@ const MobileFooter = () => {
           <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 bg-red-500 rounded-full">
             {totalItems}
           </span>
-          <FiShoppingCart className="w-6 h-6 drop-shadow-xl" />
+          <AiOutlineHeart className="w-6 h-6 drop-shadow-xl" />
         </button>
         <button
           aria-label="User"

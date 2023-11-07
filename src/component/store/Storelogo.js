@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useContext, useRef } from "react";
 import { IoChevronBackOutline, IoChevronForward } from "react-icons/io5";
-import { Autoplay, Navigation } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -35,13 +35,19 @@ const Storelogo = () => {
           swiper.navigation.update();
          
         }}
+        spaceBetween={30}
+        centeredSlides={true}
         autoplay={{
-          delay: 1000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
+        pagination={{
+          clickable: false,
+        }}
+        navigation={false}
+
+        modules={[Autoplay, Pagination, Navigation]}
         
-        spaceBetween={8}
-        navigation={true}
         allowTouchMove={false}
         loop={true}
       
@@ -88,7 +94,7 @@ const Storelogo = () => {
             slidesPerView: 10,
           },
         }}
-        modules={[Navigation]}
+       
         className="mySwiper category-slider my-10"
       >
 

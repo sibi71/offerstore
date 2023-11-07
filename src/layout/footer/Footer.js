@@ -27,7 +27,7 @@ const Footer = () => {
   const { loading, storeCustomizationSetting } = useGetSetting();
 
   return (
-    <div className="pb-16 lg:pb-0 xl:pb-0 bg-white">
+    <div className="pb-16 lg:pb-0 xl:pb-0 bg-gray-800 text-white">
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-10">
         <div className="grid grid-cols-2 md:grid-cols-7 xl:grid-cols-12 gap-5 sm:gap-9 lg:gap-11 xl:gap-7 py-10 lg:py-16 justify-between">
           {storeCustomizationSetting?.footer?.block1_status && (
@@ -46,7 +46,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block1_sub_link1}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -63,7 +63,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block1_sub_link2}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       {/* {t('common:footer-contact-us')} */}
 
                       <CMSkeleton
@@ -82,7 +82,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block1_sub_link3}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       {/* {t('common:footer-careers')} */}
                       {showingTranslateValue(
                         storeCustomizationSetting?.footer_block_one_link_three_title
@@ -103,7 +103,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block1_sub_link4}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -135,7 +135,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block2_sub_link1}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -153,7 +153,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block2_sub_link2}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -170,7 +170,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block2_sub_link3}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -187,7 +187,7 @@ const Footer = () => {
                   <Link
                     href={`${storeCustomizationSetting?.footer?.block2_sub_link4}`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -223,7 +223,7 @@ const Footer = () => {
                         : "#"
                     }`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -244,7 +244,7 @@ const Footer = () => {
                         : "#"
                     }`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -265,7 +265,7 @@ const Footer = () => {
                         : "#"
                     }`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -286,7 +286,7 @@ const Footer = () => {
                         : "#"
                     }`}
                   >
-                    <a className="text-gray-600 inline-block w-full hover:text-emerald-500">
+                    <a className="text-white inline-block w-full hover:text-emerald-500">
                       <CMSkeleton
                         count={1}
                         height={10}
@@ -307,8 +307,8 @@ const Footer = () => {
               <Link href="/">
                 <a className="mr-3 lg:mr-12 xl:mr-12" rel="noreferrer">
                   <Image
-                    width={110}
-                    height={40}
+                    width={134}
+                    height={42}
                     src={
                       storeCustomizationSetting?.footer?.block4_logo ||
                       "/logo/logo-color.svg"
@@ -317,7 +317,7 @@ const Footer = () => {
                   />
                 </a>
               </Link>
-              <p className="leading-7 font-sans text-sm text-gray-600 mt-3">
+              <p className="leading-7 font-sans text-sm text-white mt-3">
                 {showingTranslateValue(
                   storeCustomizationSetting?.footer?.block4_address
                 )}
@@ -343,9 +343,9 @@ const Footer = () => {
           )}
         </div>
 
-        <hr className="hr-line"></hr>
+      
 
-        <div className="mx-auto max-w-screen-2xl px-4 sm:px-10 bg-gray-50 shadow-sm border border-gray-50 rounded-lg">
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-10 bg-gray-600 shadow-sm  rounded-lg">
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5 sm:gap-9 lg:gap-11 xl:gap-7 py-8 items-center justify-between">
             <div className="col-span-1">
               {storeCustomizationSetting?.footer?.social_links_status && (

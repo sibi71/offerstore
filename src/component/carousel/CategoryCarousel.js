@@ -90,7 +90,7 @@ const CategoryCarousel = () => {
           },
         }}
         modules={[Navigation]}
-        className="mySwiper category-slider my-10"
+        className="mySwiper category-slider search-category  my-10"
       >
         {error ? (
           <p className="flex justify-center align-middle items-center m-auto text-xl text-red-500">

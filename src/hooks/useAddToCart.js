@@ -31,7 +31,7 @@ const useAddToCart = () => {
           : product?.stock)
       ) {
         addItem(updatedProduct, item);
-        notifySuccess(`${item} ${product.title} added to cart!`);
+        notifySuccess(`${item} ${product.title} added to Wishlist!`);
       } else {
         notifyError("Insufficient stock!");
       }
@@ -43,7 +43,7 @@ const useAddToCart = () => {
           : product?.stock)
       ) {
         addItem(updatedProduct, item);
-        notifySuccess(`${item} ${product.title} added to cart!`);
+        notifySuccess(`${item} ${product.title} added to Wishlist!`);
       } else {
         notifyError("Insufficient stock!");
       }

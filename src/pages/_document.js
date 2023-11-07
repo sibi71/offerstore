@@ -14,7 +14,7 @@ class MyDocument extends Document {
             property="og:title"
             content="Offers"
           />
-          <meta property="og:type" content="eCommerce Website" />
+          <meta property="og:type" content="offers Website" />
           <meta
             property="og:description"
             content=""

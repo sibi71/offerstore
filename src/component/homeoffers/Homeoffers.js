@@ -5,7 +5,7 @@ import React from 'react'
 import { useRef } from 'react';
 import { useState } from 'react';
 import { IoChevronBackOutline, IoChevronForward } from "react-icons/io5";
-import { Autoplay, Navigation } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -30,16 +30,21 @@ const Homeoffers = ({ popularProducts }) => {
           swiper.navigation.update();
          
         }}
+        spaceBetween={30}
+        centeredSlides={true}
         autoplay={{
-          delay: 1000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
-        
-        spaceBetween={8}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        
         allowTouchMove={false}
         loop={true}
-      
+        className="mySwiper category-slider homeoffers-slider  my-10"
         breakpoints={{
           // when window width is >= 640px
           375: {
@@ -72,7 +77,7 @@ const Homeoffers = ({ popularProducts }) => {
           // when window width is >= 768px
           1140: {
             width: 1140,
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1680: {
             width: 1680,
@@ -83,8 +88,8 @@ const Homeoffers = ({ popularProducts }) => {
             slidesPerView: 3,
           },
         }}
-        modules={[Navigation]}
-        className="mySwiper category-slider my-10"
+       
+       
       >
             {popularProducts
                           ?.slice(
@@ -103,13 +108,13 @@ const Homeoffers = ({ popularProducts }) => {
                                 )}
                             <SwiperSlide key={product.id} className="group "   onClick={() => handleModalOpen(!modalOpen, product._id)}  >
                             <div className="text-center cursor-pointer p-3  rounded-lg">
-                              <div className="bg-white p-2 mx-auto w-72 h-80 rounded-md shadow-md border-solid border-2 border-black-500" >
+                              <div className="bg-white p-2 mx-auto w-72 h-96 rounded-md shadow-md border-solid border-2 border-black-500" >
                                 
                                   <Image
                                     src={product.image[0]}
                                     alt="storelogo"
                                     width="500"
-                                    height="550"
+                                    height="680"
                                     
                                   />
                                

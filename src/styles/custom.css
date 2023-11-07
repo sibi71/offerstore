@@ -311,15 +311,38 @@ p:not(:last-of-type) {
   content: " ";
   background: linear-gradient(to right, #ffffff 0, #d6d6d6 50%, #ffffff 100%);
 }
+
+
+
+
+
 /* category slider */
+
+.swiper-pagination{
+  display: none;
+}
 .category-slider .swiper-button-prev,
 .category-slider .swiper-button-next {
   display: none;
+ 
+}
+
+
+.search-category button{
+  width: 40px;
+  height: 80px !important;
 }
 .category-slider .prevhome,
 .category-slider .nexthome {
   width: 40px;
   height: 330px;
+}
+
+.homeoffers-slider .prevhome,
+.homeoffers-slider .nexthome {
+  width: 40px;
+  height: 40px !important;
+ 
 }
 .category-slider button {
   width: 40px;
@@ -338,16 +361,28 @@ p:not(:last-of-type) {
   font-size: 25px;
   border-radius: 5px;
 }
+.homeoffers-slider button.prev,
+.homeoffers-slider button.next{
+  text-align: center;
+  background-color: #54605c;
+  color: #ffffff;
+  margin: 10px 2px 0 2px;
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  font-size: 20px;
+  border-radius: 999px ;
+}
 .category-slider button.prev {
-  left: -1px;
+  left: -2px;
   right: auto;
 }
 .category-slider button.next {
-  right: -1px;
+  right: -2px;
   left: auto;
 }
 .category-slider button.next:hover,
-.category-slider button.prev {
+.category-slider button.prev:hover {
   background-color: #10b981;
 }
 .category-slider button.prev svg,

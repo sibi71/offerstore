@@ -67,8 +67,8 @@ const Navbar = () => {
             <Link href="/">
               <a className="mr-3 lg:mr-12 xl:mr-12  lg:block">
                 <Image
-                  width={140}
-                  height={35}
+                  width={135}
+                  height={33}
                   src={
                     storeCustomizationSetting?.navbar?.header_logo ||
                     "/logo/logo.png"

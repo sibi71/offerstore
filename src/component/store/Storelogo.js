@@ -95,7 +95,7 @@ const Storelogo = () => {
           },
         }}
        
-        className="mySwiper category-slider my-10"
+        className="mySwiper category-slider store-slider my-10"
       >
 
         {storelogodata.map((storelogo, i) => (

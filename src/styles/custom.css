@@ -318,7 +318,10 @@ p:not(:last-of-type) {
 
 /* category slider */
 
-.swiper-pagination{
+.homeoffers-slider .swiper-pagination{
+  display: none;
+}
+.store-slider .swiper-pagination{
   display: none;
 }
 .category-slider .swiper-button-prev,
@@ -326,7 +329,6 @@ p:not(:last-of-type) {
   display: none;
  
 }
-
 
 .search-category button{
   width: 40px;

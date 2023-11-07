@@ -17,6 +17,10 @@
 .bg-emerald-500{
   background-color: #f15a29;
 } 
+.active{
+  color: #f15a29;
+  font-weight: bold;
+}
 .c-h-65vh {
   height: 65vh;
 }

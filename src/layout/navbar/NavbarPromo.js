@@ -14,6 +14,7 @@ import {
   FiPocket,
   FiPhoneIncoming,
 } from "react-icons/fi";
+import { useRouter } from "next/router";
 
 //internal import
 import { notifyError } from "@utils/toast";
@@ -29,6 +30,7 @@ const NavbarPromo = () => {
   const { isLoading, setIsLoading } = useContext(SidebarContext);
 
   const { showingTranslateValue } = useUtilsFunction();
+  const router = useRouter()
 
   const handleLanguage = (lang) => {
     setCurrentLang(lang);
@@ -102,10 +104,10 @@ const NavbarPromo = () => {
                     )}
 
                     {storeCustomizationSetting?.navbar?.about_menu_status && (
-                      <Link href="/about-us">
+                      <Link href="/about-us" >
                         <a
                           onClick={() => setIsLoading(!isLoading)}
-                          className="font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"
+                          className={router.pathname == "/about-us" ? "active font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}  
                         >
                           Stores
                         </a>
@@ -114,10 +116,10 @@ const NavbarPromo = () => {
                     
 
                     {storeCustomizationSetting?.navbar?.contact_menu_status && (
-                      <Link href="/contact-us">
+                      <Link href="/contact-us"  >
                         <a
                           onClick={() => setIsLoading(!isLoading)}
-                          className="font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"
+                          className={router.pathname == "/contact-us" ? "active font-serif mx-4 py-2 text-sm  font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}
                         >
                           {/* {showingTranslateValue(
                             storeCustomizationSetting?.navbar?.contact_us
@@ -305,7 +307,7 @@ const NavbarPromo = () => {
                     </Popover> */}
                    
                     {storeCustomizationSetting?.navbar?.offers_menu_status && (
-                      <Link href="/offer">
+                      <Link href="/offer" className={router.pathname == "/offer" ? "active" : ""}>
                         <a
                           onClick={() => setIsLoading(!isLoading)}
                           className="relative inline-flex items-center bg-red-100 font-serif ml-4 py-0 px-2 rounded text-sm font-medium text-red-500 hover:text-emerald-600"
@@ -356,10 +358,10 @@ const NavbarPromo = () => {
             </div>
 
             {storeCustomizationSetting?.navbar?.privacy_policy_status && (
-              <Link href="/privacy-policys">
+              <Link href="/privacy-policys" >
                 <a
                   onClick={() => setIsLoading(!isLoading)}
-                  className="font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"
+                  className={router.pathname == "/privacy-policys" ? "active font-serif mx-4 py-2 text-sm  font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.privacy_policy
@@ -368,10 +370,10 @@ const NavbarPromo = () => {
               </Link>
             )}
             {storeCustomizationSetting?.navbar?.term_and_condition_status && (
-              <Link href="/terms-and-conditionss">
+              <Link href="/terms-and-conditionss" >
                 <a
                   onClick={() => setIsLoading(!isLoading)}
-                  className="font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"
+                  className={router.pathname == "/terms-and-conditionss" ? "active font-serif mx-4 py-2 text-sm  font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}
                 >
                   {showingTranslateValue(
                     storeCustomizationSetting?.navbar?.term_and_condition

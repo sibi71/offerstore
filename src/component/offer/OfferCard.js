@@ -11,8 +11,8 @@ const OfferCard = () => {
 
   return (
     <div className="w-full group">
-      <div className="bg-gray-50 h-full border-2 border-orange-500 transition duration-150 ease-linear transform group-hover:border-emerald-500 rounded shadow">
-        <div className="bg-orange-100 text-gray-900 px-6 py-2 rounded-t border-b flex items-center justify-center">
+      <div className="bg-gray-50 h-full border-2 border-gray-200 transition duration-150 ease-linear  rounded shadow">
+        <div className="bg-blue-500 text-gray-50 px-6 py-2 rounded-t border-b flex items-center justify-center">
           <h3 className="text-base font-serif font-medium ">
             {showingTranslateValue(
               storeCustomizationSetting?.home?.discount_title

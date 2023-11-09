@@ -11,11 +11,17 @@ import {
   WhatsappIcon,
 } from "react-share";
 
+import {FaFacebook, FaLinkedinIn, FaWhatsapp, FaWhatsappSquare} from "react-icons/fa"
+
 //internal import
 import { UserContext } from "@context/UserContext";
 import useGetSetting from "@hooks/useGetSetting";
 import CMSkeleton from "@component/preloader/CMSkeleton";
 import useUtilsFunction from "@hooks/useUtilsFunction";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { BsLinkedin, BsPinterest} from "react-icons/bs"
+import {RiWhatsappFill} from "react-icons/ri"
+
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -369,9 +375,11 @@ const Footer = () => {
                             aria-label="Social Link"
                             rel="noreferrer"
                             target="_blank"
-                            className="block text-center mx-auto text-gray-500 hover:text-white"
+                            className="block text-center mx-autotext-white hover:text-orange-600"
                           >
-                            <FacebookIcon size={34} round />
+                           
+                            <FaFacebook size={24} />
+                           
                           </a>
                         </Link>
                       </li>
@@ -385,9 +393,9 @@ const Footer = () => {
                             aria-label="Social Link"
                             rel="noreferrer"
                             target="_blank"
-                            className="block text-center mx-auto text-gray-500 hover:text-white"
+                            className="block text-center mx-auto text-white hover:text-orange-600"
                           >
-                            <TwitterIcon size={34} round />
+                            <AiFillTwitterCircle size={24} />
                           </a>
                         </Link>
                       </li>
@@ -401,9 +409,9 @@ const Footer = () => {
                             aria-label="Social Link"
                             rel="noreferrer"
                             target="_blank"
-                            className="block text-center mx-auto text-gray-500 hover:text-white"
+                            className="block text-center mx-auto text-white hover:text-orange-600"
                           >
-                            <PinterestIcon size={34} round />
+                            <BsPinterest size={24} />
                           </a>
                         </Link>
                       </li>
@@ -417,9 +425,9 @@ const Footer = () => {
                             aria-label="Social Link"
                             rel="noreferrer"
                             target="_blank"
-                            className="block text-center mx-auto text-gray-500 hover:text-white"
+                            className="block text-center mx-auto text-white hover:text-orange-600"
                           >
-                            <LinkedinIcon size={34} round />
+                            <BsLinkedin size={24} />
                           </a>
                         </Link>
                       </li>
@@ -433,9 +441,11 @@ const Footer = () => {
                             aria-label="Social Link"
                             rel="noreferrer"
                             target="_blank"
-                            className="block text-center mx-auto text-gray-500 hover:text-white"
+                            className="block text-center mx-auto text-white hover:text-orange-600"
                           >
-                            <WhatsappIcon size={34} round />
+                        
+                           <RiWhatsappFill size={24} />
+                            
                           </a>
                         </Link>
                       </li>
@@ -450,7 +460,7 @@ const Footer = () => {
                   <p className="text-base leading-7 font-medium block">
                     {t("common:footer-call-us")}
                   </p>
-                  <h5 className="text-2xl font-bold text-emerald-500 leading-7">
+                  <h5 className="text-2xl font-bold text-orange-600 leading-7">
                     {/* +012345-67900 */}
                     {storeCustomizationSetting?.footer?.bottom_contact}
                   </h5>
@@ -486,12 +496,12 @@ const Footer = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-500"
+              className="text-orange-600"
             >
             Offers
             </a>
           </Link>
-          , All rights reserved.
+          , All rights reserved
         </p>
       </div>
     </div>

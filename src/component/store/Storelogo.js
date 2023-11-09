@@ -71,7 +71,7 @@ const Storelogo = () => {
           // when window width is >= 768px
           768: {
             width: 768,
-            slidesPerView: 4,
+            slidesPerView: 6,
           },
 
           // when window width is >= 768px
@@ -87,15 +87,15 @@ const Storelogo = () => {
           },
           1680: {
             width: 1680,
-            slidesPerView: 10,
+            slidesPerView: 8,
           },
           1920: {
             width: 1920,
-            slidesPerView: 10,
+            slidesPerView: 9,
           },
         }}
        
-        className="mySwiper category-slider store-slider my-10"
+        className="mySwiper category-slider  store-slider mb-10 mx-auto"
       >
 
         {storelogodata.map((storelogo, i) => (
@@ -103,7 +103,7 @@ const Storelogo = () => {
                 <div
                   className="text-center cursor-pointer p-3  rounded-lg"
                 >
-                  <div className="bg-white p-2 mx-auto w-32 h-32 rounded-md shadow-md border-solid border-2 border-black-500">
+                  <div className="bg-white p-2 mx-auto w-32 h-32 rounded-full  border-solid border-2 border-black-500 flex justify-center items-center content-center ">
                     
                       <Image
                         src={storelogo.img}
@@ -111,6 +111,7 @@ const Storelogo = () => {
                         width="100"
                         height="100"
                         onClick={() => handleMoreInfo(product.slug)}
+                        className="rounded-full"
                       />
                    
                   </div>

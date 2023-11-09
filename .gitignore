@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 
 # dependenciesg
 /.pnp
@@ -51,5 +51,6 @@ yarn-error.log*
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 **/public/fallback-*.js
+node_modules
 node_modules
 node_modules

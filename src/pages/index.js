@@ -19,7 +19,11 @@ import AttributeServices from "@services/AttributeServices";
 import CMSkeleton from "@component/preloader/CMSkeleton";
 import Coupon from "@component/coupon/Coupon";
 import Storelogo from "@component/store/Storelogo";
+import Brandlogo from "@component/store/Brandlogo";
 import Homeoffers from "@component/homeoffers/Homeoffers";
+import Image from "next/image";
+import banner from "../../public/banner/banner111.png"
+
 
 const Home = ({ popularProducts, discountProducts, attributes }) => {
   const router = useRouter();
@@ -44,7 +48,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
         <Layout>
           <div className="min-h-screen">
             {/* <StickyCart /> */}
-            <div className="bg-white">
+            <div >
               <div className="mx-auto py-5 max-w-screen-2xl px-3 sm:px-10">
                 <div className="flex w-full">
                   <div className="flex-shrink-0 xl:pr-6 lg:block w-full lg:w-3/5">
@@ -54,21 +58,21 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                     <OfferCard />
                   </div>
                 </div>
-                {storeCustomizationSetting?.home?.promotion_banner_status && (
+                {/* {storeCustomizationSetting?.home?.promotion_banner_status && (
                   <div className="bg-orange-100 px-10 py-6 rounded-lg mt-6">
                     <Banner />
                   </div>
-                )}
+                )} */}
               </div>
             </div>
                  
           
             {/* feature category's */}
             {storeCustomizationSetting?.home?.featured_status && (
-              <div className="bg-gray-100 lg:py-16 py-10">
+              <div className=" lg:py-16 py-10">
                 <div className="mx-auto max-w-screen-2xl px-3 sm:px-10">
-                  <div className="mb-10 flex justify-center">
-                    <div className="text-center w-full lg:w-2/5">
+                  <div className="mb-10  flex justify-start">
+                    <div className="  justify-start w-full lg:w-2/5">
                       <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
                         <CMSkeleton
                           count={1}
@@ -92,13 +96,25 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                     </div>
                   </div>
                   <FeatureCategory />
+                </div>
 
+              </div>
+            )}
+
+                          
+            {/* top stroe */}
+             <div className="lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10" >
+                  <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold mb-10 flex justify-start" >Top Stores</h2>
+                  <Storelogo />
+                  </div>
+
+            {/* top offer */}
                   {storeCustomizationSetting?.home?.popular_products_status && (
-              <div className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
-                <div className="mb-10 flex justify-center">
-                  <div className="text-center w-full lg:w-2/5">
+                  <div className="bg-gray-50 lg:py-1 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
+                   <div className=" flex justify-start">
+                  <div className="justify-start w-full lg:w-2/5">
                     <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
-                    <CMSkeleton
+                      <CMSkeleton
                         count={1}
                         height={30}
                         // error={error}
@@ -106,49 +122,71 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         data={storeCustomizationSetting?.home?.popular_title}
                       />
                     </h2>
-                  
-                  </div>
-                </div>
-                <div className="flex">
-                  <div className="w-full">
-                    {loading ? (
+                    <p className="text-base font-sans text-gray-600 leading-6">
                       <CMSkeleton
-                        count={20}
-                        height={20}
+                        count={5}
+                        height={10}
                         error={error}
                         loading={loading}
+                        data={
+                          storeCustomizationSetting?.home?.popular_description
+                        }
                       />
-                    ) : (
-                     
-                        <Homeoffers popularProducts={popularProducts} />
-                    )}
+                    </p>
                   </div>
                 </div>
+                      <div className="flex">
+                            <div className="w-full">
+                              {loading ? (
+                                <CMSkeleton
+                                  count={20}
+                                  height={20}
+                                  error={error}
+                                  loading={loading}
+                                />
+                              ) : (
+                              
+                                  <Homeoffers popularProducts={popularProducts} />
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+               {/*  banner*/}
+               <div className="block mx-auto max-w-screen-2xl py-10">
+                     <Image
+                        src={banner}
+                        alt="banner"
+                      />
               </div>
-            )}
-                    <div className="mx-auto max-w-screen-2xl px-4 py-10 lg:py-20 sm:px-10">
-                    <h2 className="text-xl lg:text-2xl mb-10 font-serif font-semibold text-center ">
-                  Featured Coupons
+          
+            {/* top brands */}
+            <div className="lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10" >
+                  <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold mb-10 flex justify-start" >Top Brands  </h2>
+                  <Brandlogo />
+                  </div>
+
+            
+
+            {/* top coupons */}
+               <div className="mx-auto max-w-screen-2xl px-4 py-10 lg:py-1 sm:px-10">
+                    <h2 className="text-xl lg:text-2xl mb-10 font-serif font-semibold flex justify-start ">
+                    Featured Coupons
                     </h2>
                     <div className="grid gap-6 grid-cols-1 xl:grid-cols-2">
                       <Coupon />
                     </div>
-                  </div>
-                 
-                
                 </div>
 
-              </div>
-            )}
 
             {/* popular products */}
             
-            {storeCustomizationSetting?.home?.popular_products_status && (
-              <div className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
-                  <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold mb-10 flex justify-center" >Popular Brands</h2>
-                  <Storelogo />
-                <div className="mb-10 flex justify-center">
-                  <div className="text-center w-full lg:w-2/5">
+            {/* {storeCustomizationSetting?.home?.popular_products_status && (
+              <div className="bg-gray-50 lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
+              
+                <div className="mb-10 flex justify-start">
+                  <div className="justify-start w-full lg:w-2/5">
                     <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
                       <CMSkeleton
                         count={1}
@@ -207,16 +245,12 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                   </div>
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* promotional banner card */}
             {storeCustomizationSetting?.home?.delivery_status && (
-              <div className="block mx-auto max-w-screen-2xl">
-                <div className="mx-auto max-w-screen-2xl px-4 sm:px-10">
-                  <div className="lg:p-16 p-6 bg-stone-900 shadow-sm border rounded-lg">
+              <div className="block mx-auto max-w-screen-2xl py-10">
                     <CardTwo />
-                  </div>
-                </div>
               </div>
             )}
 
@@ -226,8 +260,8 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                 id="discount"
                 className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10"
               >
-                <div className="mb-10 flex justify-center">
-                  <div className="text-center w-full lg:w-2/5">
+                <div className="mb-10 flex justify-start">
+                  <div className="justify-start w-full lg:w-2/5">
                     <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
                       <CMSkeleton
                         count={1}

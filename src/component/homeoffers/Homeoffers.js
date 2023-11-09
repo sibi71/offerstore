@@ -1,9 +1,11 @@
 import ProductModal from '@component/modal/ProductModal';
+import CMSkeleton from '@component/preloader/CMSkeleton';
 import useGetSetting from '@hooks/useGetSetting';
 import Image from 'next/image';
 import React from 'react'
 import { useRef } from 'react';
 import { useState } from 'react';
+import { AiOutlineHeart } from 'react-icons/ai';
 import { IoChevronBackOutline, IoChevronForward } from "react-icons/io5";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
@@ -16,8 +18,11 @@ const Homeoffers = ({ popularProducts }) => {
     const nextRef = useRef(null);
     const { loading, error, storeCustomizationSetting } = useGetSetting();
 
+    console.log(popularProducts);
+
     const handleModalOpen = (event, id) => {
         setModalOpen(event);
+        console.log(id);
       };
   return (
     <>                           
@@ -71,7 +76,7 @@ const Homeoffers = ({ popularProducts }) => {
           // when window width is >= 768px
           991: {
             width: 991,
-            slidesPerView: 2,
+            slidesPerView: 4,
           },
 
           // when window width is >= 768px
@@ -81,11 +86,11 @@ const Homeoffers = ({ popularProducts }) => {
           },
           1680: {
             width: 1680,
-            slidesPerView: 3,
+            slidesPerView: 5,
           },
           1920: {
             width: 1920,
-            slidesPerView: 3,
+            slidesPerView: 5,
           },
         }}
        
@@ -97,7 +102,7 @@ const Homeoffers = ({ popularProducts }) => {
                             storeCustomizationSetting?.home
                               ?.popular_product_limit
                           )
-                          .map((product) => (
+                          .map((product,index) => (
                             <>
                              {modalOpen && (
                                 <ProductModal
@@ -106,19 +111,45 @@ const Homeoffers = ({ popularProducts }) => {
                                     product={product}
                                     />
                                 )}
-                            <SwiperSlide key={product.id} className="group "   onClick={() => handleModalOpen(!modalOpen, product._id)}  >
-                            <div className="text-center cursor-pointer p-3  rounded-lg">
-                              <div className="bg-white p-2 mx-auto w-72 h-96 rounded-md shadow-md border-solid border-2 border-black-500" >
+                            <SwiperSlide key={index} className="group" >
+                            <div className="text-center cursor-pointer p-3  rounded-lg capitalize "   >
+                              <div className="mx-auto homeOffer_container lg:h-72 h-72 md:h-52 bg-gray-50"  >
                                 
                                   <Image
                                     src={product.image[0]}
-                                    alt="storelogo"
-                                    width="500"
-                                    height="680"
-                                    
+                                    alt="offers"
+                                    width="300"
+                                    height="300"
+                                    className='homeOffer_img'
+                                    onClick={() => handleModalOpen(!modalOpen, product._id)}
                                   />
-                               
+
+                                  <div className='flex justify-between w-full px-2 '>
+                                  <h5 className='text-xl lg:text-3xl mb-2 font-serif font-semibold text-gray-50 homeoffers_time'>40 <span>%</span></h5>
+                                  <h2 className="text-xl  mb-2  ">
+                                    <CMSkeleton
+                                      count={1}
+                                      height={30}
+                                      // error={error}
+                                      loading={loading}
+                                      data={product.title}
+                                      
+                                    />
+                                  </h2>
+                                 
+                                  <button
+                                onClick={() => handleAddItem(product)}
+                                aria-label="cart"
+                                className="h-9 w-9 flex items-center justify-center  rounded-full text-orange-600  hover:bg-orange-600 hover:text-white transition-all"
+                            >
+                              {" "}
+                              <span className="text-xl">
+                                <AiOutlineHeart />
+                              </span>{" "}
+                            </button>
+                                  </div>
                               </div>
+                              
             
                             </div>
                           </SwiperSlide>

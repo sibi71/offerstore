@@ -13,7 +13,7 @@ const CardTwo = () => {
 
   return (
     <>
-      <div className="w-full bg-white shadow-sm lg:px-10 lg:py-5 p-6 rounded-lg">
+      <div className="w-full bg-gray-200 shadow-sm lg:px-10 lg:py-10 p-6 ">
         <div className="flex justify-between items-center">
           <div className="lg:w-3/5">
             <span className="text-base lg:text-lg">
@@ -45,21 +45,10 @@ const CardTwo = () => {
                 }
               />
             </p>
-            <Link
-              href={`${storeCustomizationSetting?.home?.quick_delivery_link}`}
-            >
-              <a
-                className="lg:w-1/3   text-xs font-serif font-medium inline-block mt-5 px-8 py-3 bg-emerald-500 text-center text-white rounded-full hover:text-white contact-btn"
-                target="_blank"
-              >
-                {showingTranslateValue(
-                  storeCustomizationSetting?.home?.quick_delivery_button
-                )}
-              </a>
-            </Link>
+         
           </div>
           <div className="w-1/5 flex-grow hidden lg:flex md:flex md:justify-items-center lg:justify-end">
-            <Image
+            {/* <Image
               width={373}
               height={250}
               alt="Quick Delivery to Your Home"
@@ -68,7 +57,19 @@ const CardTwo = () => {
                 storeCustomizationSetting?.home?.quick_delivery_img ||
                 "/cta/delivery-boy.png"
               }
-            />
+            /> */}
+               <Link
+              href={`${storeCustomizationSetting?.home?.quick_delivery_link}`}
+            >
+              <a
+                className="lg:w-1/3 text-md font-serif font-medium inline-block  px-10 py-3 bg-emerald-500 text-center text-white rounded-full hover:text-white contact-btn"
+                target="_blank"
+              >
+                {showingTranslateValue(
+                  storeCustomizationSetting?.home?.quick_delivery_button
+                )}
+              </a>
+            </Link>
           </div>
         </div>
       </div>

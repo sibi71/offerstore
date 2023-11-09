@@ -95,9 +95,9 @@ console.log(product);
         </div>
         <div className="w-full px-3 lg:px-4 pb-4 overflow-hidden">
           <div className="relative mb-1">
-            {/* <span className="text-gray-400 font-medium text-xs d-block mb-1">
+            <span className="text-gray-400 font-medium text-xs d-block mb-1">
               {product.unit}
-            </span> */}
+            </span>
             <h2 className="text-heading truncate mb-0 block text-sm font-medium text-gray-600 capitalize">
               <span className="line-clamp-2">
                 {showingTranslateValue(product?.title)}
@@ -105,7 +105,7 @@ console.log(product);
             </h2>
           </div>
 
-          {/* <div className="flex justify-between items-center text-heading text-sm sm:text-base space-s-2 md:text-base lg:text-xl">
+          <div className="flex justify-between items-center text-heading text-sm sm:text-base space-s-2 md:text-base lg:text-xl">
             <Price
               card
               product={product}
@@ -121,6 +121,7 @@ console.log(product);
                   : product?.prices?.originalPrice
               }
             />
+             
 
             {inCart(product._id) ? (
               <div>
@@ -162,7 +163,7 @@ console.log(product);
               <button
                 onClick={() => handleAddItem(product)}
                 aria-label="cart"
-                className="h-9 w-9 flex items-center justify-center border border-gray-200 rounded text-emerald-500 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white transition-all"
+                className="h-9 w-9 flex items-center justify-center border border-gray-200 rounded text-orange-600 hover:bg-orange-600 hover:bg-emerald-500 hover:text-white transition-all"
               >
                 {" "}
                 <span className="text-xl">
@@ -170,7 +171,7 @@ console.log(product);
                 </span>{" "}
               </button>
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     </>

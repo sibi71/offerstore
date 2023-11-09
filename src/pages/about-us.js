@@ -18,8 +18,10 @@ import ProductServices from "@services/ProductServices";
 import AttributeServices from "@services/AttributeServices";
 import FeatureCategory from "@component/category/FeatureCategory";
 import Sliderbar from "@component/sliderbar/Sliderbar";
+import Storecard from "@component/homeoffers/Storecard";
 
 import { Loader } from "@googlemaps/js-api-loader";
+import Homeoffers from "@component/homeoffers/Homeoffers";
 
 const AboutUs = ({popularProducts}) => {
  
@@ -28,9 +30,9 @@ const AboutUs = ({popularProducts}) => {
 
  
   return (
-    <Layout title="About Us" description="This is about us page"> 
+    <Layout title="About Us"> 
        <Storelogo />
-       <div className="flex justify-between">
+       <div className="flex justify-between ">
        <Sliderbar />
        {storeCustomizationSetting?.home?.popular_products_status && (
               <div className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
@@ -45,7 +47,7 @@ const AboutUs = ({popularProducts}) => {
                         loading={loading}
                       />
                     ) : (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-3 lg:gap-2">
+                      <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-4 gap-2 md:gap-3 lg:gap-5">
                         {popularProducts
                           ?.slice(
                             0,
@@ -55,10 +57,10 @@ const AboutUs = ({popularProducts}) => {
                           .map((product) => (
 
                             <>
-                            <ProductCard
-                              key={product._id}
-                              product={product}
-                              />
+                            <Storecard
+                            key={product._id}
+                            product={product} 
+                            />
                             
 
                             </>

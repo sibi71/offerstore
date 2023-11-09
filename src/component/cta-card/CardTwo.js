@@ -13,10 +13,10 @@ const CardTwo = () => {
 
   return (
     <>
-      <div className="w-full bg-gray-200 shadow-sm lg:px-10 lg:py-10 p-6 ">
-        <div className="flex justify-between items-center">
-          <div className="lg:w-3/5">
-            <span className="text-base lg:text-lg">
+      <div className="w-full bg-blue-600 shadow-sm lg:px-10 lg:py-10 p-6 ">
+        <div className="flex justify-between items-center text-gray-50">
+          <div className="lg:w-4/6 2xl:4/6" >
+            <span className="text-base lg:text-lg ">
               <CMSkeleton
                 count={1}
                 height={20}
@@ -25,7 +25,7 @@ const CardTwo = () => {
                 data={storeCustomizationSetting?.home?.quick_delivery_subtitle}
               />
             </span>
-            <h2 className="font-serif text-lg lg:text-2xl font-bold mb-1">
+            <h2 className="font-serif text-lg lg:text-2xl font-bold mb-1 ">
               <CMSkeleton
                 count={1}
                 height={30}
@@ -47,7 +47,7 @@ const CardTwo = () => {
             </p>
          
           </div>
-          <div className="w-1/5 flex-grow hidden lg:flex md:flex md:justify-items-center lg:justify-end">
+          <div className="w-1/5 flex-grow hidden lg:flex md:flex md:justify-items-center lg:justify-center">
             {/* <Image
               width={373}
               height={250}
@@ -62,7 +62,7 @@ const CardTwo = () => {
               href={`${storeCustomizationSetting?.home?.quick_delivery_link}`}
             >
               <a
-                className="lg:w-1/3 text-md font-serif font-medium inline-block  px-10 py-3 bg-emerald-500 text-center text-white rounded-full hover:text-white contact-btn"
+                className="lg:w-2/3 2xl:w-1/2  text-md font-serif font-medium inline-block  px-10 py-3 bg-emerald-500 text-center text-white rounded-full hover:text-white contact-btn"
                 target="_blank"
               >
                 {showingTranslateValue(

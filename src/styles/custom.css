@@ -1484,7 +1484,7 @@ background-color: transparent;
 }
 .sliderbar_input button{
   font-size: 13px;
-  background-color: #047BD5;
+  background-color: rgb(37 99 235);
   padding:5px;
   margin: 0 5px;
   outline: none;

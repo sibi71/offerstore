@@ -64,7 +64,7 @@ const Storecard = ({ product, attributes }) => {
           <div className="group box-border overflow-hidden flex  homeOffer_container  pe-0 flex-col items-center  relative ">
             <div
               onClick={() => handleModalOpen(!modalOpen, product._id)}
-              className="relative flex justify-center lg:h-72 h-72 md:h-52 cursor-pointer "
+              className="relative flex justify-center lg:h-80 h-72 2xl:h-96 md:h-64 cursor-pointer "
             >
               {/* <div className="left-3">
                 <Stock product={product} stock={product.stock} card />

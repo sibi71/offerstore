@@ -101,9 +101,9 @@ const Storelogo = () => {
         {brandslogodata.map((storelogo, i) => (
               <SwiperSlide key={i} className="group">
                 <div
-                  className="text-center cursor-pointer p-3  rounded-lg"
+                  className="text-center cursor-pointer p-1  rounded-lg"
                 >
-                  <div className=" p-2 mx-auto  ">
+                  <div className=" ">
                     
                       <Image
                         src={storelogo.img}

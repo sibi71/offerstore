@@ -89,7 +89,7 @@ const Sliderbar = () => {
                 <div className="sliderbar_title mb-3">
                   <div className="sliderbar_input  ">
                     <input type="search" placeholder="search your nearby store"  /> 
-                    <button> <ImLocation2 size={24} /></button>
+                    <button > <ImLocation2 size={24} /></button>
                   </div>
 
                   <div className="sliderbar_range">

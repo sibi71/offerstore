@@ -337,7 +337,7 @@ p:not(:last-of-type) {
 
 .search-category button{
   width: 40px;
-  height: 80px !important;
+  height: 40px !important;
 }
 .category-slider .prevhome,
 .category-slider .nexthome {
@@ -365,6 +365,19 @@ p:not(:last-of-type) {
   position: absolute;
   z-index: 10;
   top: 30%;
+  font-size: 20px;
+  border-radius: 999px;
+  backdrop-filter: blur(2px);
+}
+.search-slider button.prev,
+.search-slider button.next {
+  text-align: center;
+  background-color: rgba(174, 174, 174, 0.658);
+  color: #ffffff;
+  margin: 10px 2px 0 2px;
+  position: absolute;
+  z-index: 10;
+  top: 15% !important;
   font-size: 20px;
   border-radius: 999px;
   backdrop-filter: blur(2px);

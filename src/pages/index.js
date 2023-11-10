@@ -155,7 +155,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                       )}
 
                {/*  banner*/}
-               <div className="block mx-auto max-w-screen-2xl py-5 w-72">
+               <div className="block mx-auto max-w-screen-2xl py-5 ">
                      <Image
                         src={banner}
                         alt="banner"

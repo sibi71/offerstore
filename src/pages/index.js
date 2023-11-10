@@ -25,6 +25,7 @@ import Image from "next/image";
 import banner from "../../public/banner/banner111.png"
 
 
+
 const Home = ({ popularProducts, discountProducts, attributes }) => {
   const router = useRouter();
   const { isLoading, setIsLoading } = useContext(SidebarContext);
@@ -154,10 +155,11 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                       )}
 
                {/*  banner*/}
-               <div className="block mx-auto max-w-screen-2xl py-10">
+               <div className="block mx-auto max-w-screen-2xl py-5 w-72">
                      <Image
                         src={banner}
                         alt="banner"
+                        className=""
                       />
               </div>
           
@@ -170,7 +172,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
             
 
             {/* top coupons */}
-               <div className="mx-auto max-w-screen-2xl px-4 py-10 lg:py-1 sm:px-10">
+               <div className="mx-auto max-w-screen-2xl px-4 py-10 lg:py-1 sm:px-10 ">
                     <h2 className="text-xl lg:text-2xl mb-10 font-serif font-semibold flex justify-start ">
                     Featured Coupons
                     </h2>
@@ -318,6 +320,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
               </div>
             )}
           </div>
+          
         </Layout>
       )}
     </>

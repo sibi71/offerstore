@@ -534,7 +534,22 @@ p:not(:last-of-type) {
 }
 
 /* Footer language Drop */
+@media screen and (max-width: 1025px) {
+  .footer_mobliedowmlad {
+    margin-left: 3rem !important;
+  }
+}
+@media screen and (max-width: 978px) {
+  .footer_mobliedowmlad {
+    margin-left: 1rem !important;
+  }
+}
 
+
+
+.footer_mobliedowmlad {
+  margin-left: 10rem;
+}
 .footer .dropbtn {
   background-color: transparent;
   color: #222;

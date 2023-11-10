@@ -113,13 +113,13 @@ const Homeoffers = ({ popularProducts }) => {
                                 )}
                             <SwiperSlide key={index} className="group" >
                             <div className="text-center cursor-pointer p-3  rounded-lg capitalize "   >
-                              <div className="mx-auto homeOffer_container lg:h-72 h-72 md:h-52 bg-gray-50"  >
+                              <div className="mx-auto homeOffer_container lg:h-fit h-fit md:h-52 bg-gray-50"  >
                                 
                                   <Image
                                     src={product.image[0]}
                                     alt="offers"
                                     width="300"
-                                    height="300"
+                                    height="350"
                                     className='homeOffer_img'
                                     onClick={() => handleModalOpen(!modalOpen, product._id)}
                                   />

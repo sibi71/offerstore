@@ -33,7 +33,7 @@ const Sliderbar = () => {
     const [currentLang, setCurrentLang] = useState({});
     const { lang, storeCustomizationSetting } = useGetSetting();
     const { isLoading, setIsLoading } = useContext(SidebarContext);
-     const sliderEl = document.querySelector("#range")
+     const sliders = document.getElementById("range")
     const sliderValue = document.querySelector(".value")
   
     const { showingTranslateValue } = useUtilsFunction();
@@ -61,14 +61,15 @@ const Sliderbar = () => {
           }
         }
       })();
-      // sliderEl.addEventListener("input", (event) => {
+
+      // sliders.addEventListener("input", (event) => {
       //   const tempSliderValue = event.target.value; 
       
       //   sliderValue.textContent = tempSliderValue;
       
-      //   const progress = (tempSliderValue / sliderEl.max) * 100;
+      //   const progress = (tempSliderValue / sliders.max) * 100;
      
-      //   sliderEl.style.background = `linear-gradient(to right, #f50 ${progress}%, #ccc ${progress}%)`;
+      //   sliders.style.background = `linear-gradient(to right, #f50 ${progress}%, #ccc ${progress}%)`;
       //   })
      
     }, []);

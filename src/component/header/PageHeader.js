@@ -1,15 +1,15 @@
 import React from "react";
 
 const PageHeader = ({ title, headerBg }) => {
-  console.log(headerBg);
+  console.log(headerBg,"headerbg");
   return (
     <div
       style={{ backgroundImage: `url(${headerBg || "/page-header-bg.jpg"})` }}
-      className={`flex justify-center py-10 lg:py-20 bg-indigo-100 w-full bg-cover bg-no-repeat bg-bottom`}
+      className={`flex justify-center py-10 lg:py-28 bg-indigo-100 w-full bg-cover bg-no-repeat bg-bottom mx-auto`}
     >
       <div className="flex mx-auto w-full max-w-screen-2xl px-3 sm:px-10">
         <div className="w-full flex justify-center flex-col relative">
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold font-serif text-center">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold font-serif text-center hidden">
             {/* {t(`common:${title}`)} */}
             {title}
           </h2>

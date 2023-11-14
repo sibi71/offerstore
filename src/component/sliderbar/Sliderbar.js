@@ -26,15 +26,16 @@ import useUtilsFunction from "@hooks/useUtilsFunction";
 import Maps from "@component/maps/Maps";
 import Image from "next/image";
 import map from "../../../public/maps.png"
-import { headeritems } from "src/data/localdata";
+import { headeritems, headeritemsslider } from "src/data/localdata";
 import { ImLocation2 } from "react-icons/im";
 const Sliderbar = () => {
     const [languages, setLanguages] = useState([]);
     const [currentLang, setCurrentLang] = useState({});
     const { lang, storeCustomizationSetting } = useGetSetting();
     const { isLoading, setIsLoading } = useContext(SidebarContext);
-     const sliders = document.getElementById("range")
-    const sliderValue = document.querySelector(".value")
+
+    //  const sliders = document.querySelector("#range")
+    // const sliderValue = document.querySelector(".value")
   
     const { showingTranslateValue } = useUtilsFunction();
   
@@ -88,7 +89,7 @@ const Sliderbar = () => {
             </div>
             <div className='sliderbar_map '>
                 <div className="sliderbar_title mb-3">
-                  <div className="sliderbar_input  ">
+                  {/* <div className="sliderbar_input  ">
                     <input type="search" placeholder="search your nearby store"  /> 
                     <button > <ImLocation2 size={24} /></button>
                   </div>
@@ -119,7 +120,7 @@ const Sliderbar = () => {
                     </div>  
                  
                   
-                  </div>
+                  </div> */}
                   
                   
                 </div>
@@ -132,9 +133,51 @@ const Sliderbar = () => {
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             {
+              headeritemsslider.map((menuitem ,index)=>{
+                return(
+              <Disclosure key={index}  >
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="flex justify-between w-full px-4 py-3 bg-blue-500 mt-5  text-base font-medium text-left text-gray-50  sliderbar_menu focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 capitalize">
+                      <span>
+                       {menuitem.title}
+                      </span>
+                      <ChevronUpIcon
+                        className={`${
+                          open ? "transform rotate-180 text-gray-50" : ""
+                        } w-5 h-5 text-gray-50`}
+                      />
+                    </Disclosure.Button>
+
+                        {
+                          menuitem.option?(
+                            <Disclosure.Panel className="px-4 text-sm leading-7 text-gray-500   sliderbar_container ">
+                              {
+                                menuitem.option?.map((option,index)=>{
+                                  return(
+                                    <div key={index} className="sliderbar_option hover:text-blue-500 p-1 cursor-pointer">
+                                      
+                                      <input type="radio" name={menuitem.title} id={menuitem.title} value={option.optiontitle} />
+                                      <label for={menuitem.title}>{option.optiontitle}</label><br></br>
+
+                                    </div>
+                                  )
+                                })
+                              }
+                     </Disclosure.Panel>
+                          ):("")
+                        }                    
+                  </>
+                )}
+              </Disclosure>
+                )
+              })
+            }
+            
+            {
               headeritems.map((menuitem ,index)=>{
                 return(
-                  <Disclosure key={index} >
+              <Disclosure key={index} >
                 {({ open }) => (
                   <>
                     <Disclosure.Button className="flex justify-between w-full px-4 py-3  text-base font-medium text-left text-gray-600 hover:text-orange-600   sliderbar_menu focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 capitalize">

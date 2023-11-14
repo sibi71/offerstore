@@ -83,7 +83,39 @@ export const storedata = [
 
 ]
 
+export const headeritemsslider = [
+    {
+        title:"Distance",
+        Image:"https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100",
+        option:[  
+        {optiontitle :"  Any Distance"},
+        {optiontitle :"  0 - 05km"},
+        { optiontitle :" 05 - 15km"},
+        { optiontitle :" 15 - 30km"},
+        { optiontitle :" 30 - 45km"},
+    
+        ]
+            
+        
+    },
+    {
+        title:"Prices",
+        Image:"https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100",
+        option:[  
+        {optiontitle :" All"},
+        {optiontitle :" 0 - 500 AED"},
+        { optiontitle :" 500 - 1000 AED"},
+        { optiontitle :" 1000 - 5000 AED"},
+        { optiontitle :" 5000 - 10000 AED"},
+    
+        ]
+            
+        
+    },
+]
+
 export const headeritems = [
+    
     {
         title:"grocery",
         Image :"https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"

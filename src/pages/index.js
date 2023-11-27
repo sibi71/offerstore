@@ -55,7 +55,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                   <div className="flex-shrink-0 xl:pr-6 lg:block w-full lg:w-3/5">
                     <MainCarousel />
                   </div>
-                  <div className="w-full hidden lg:flex">
+                  <div className="w-full hidden lg:flex ">
                     <OfferCard />
                   </div>
                 </div>
@@ -70,7 +70,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
           
             {/* feature category's */}
             {storeCustomizationSetting?.home?.featured_status && (
-              <div className=" lg:py-16 py-10">
+              <div className="">
                 <div className="mx-auto max-w-screen-2xl px-3 sm:px-10">
                   <div className="mb-10  flex justify-start">
                     <div className="  justify-start w-full lg:w-2/5">
@@ -105,13 +105,22 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                           
             {/* top stroe */}
              <div className="lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10" >
-                  <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold mb-10 flex justify-start" >Top Stores</h2>
+                  <h2 className="text-xl lg:text-2xl  font-serif font-semibold mb-10 flex justify-start" >Top Stores</h2>
                   <Storelogo />
                   </div>
 
+                   {/*  banner*/}
+               <div className="block mx-auto max-w-screen-2xl mb-2  ">
+                     <Image
+                        src={banner}
+                        alt="banner"
+                        className=""
+                      />
+              </div>
+
             {/* top offer */}
                   {storeCustomizationSetting?.home?.popular_products_status && (
-                  <div className="bg-gray-50 lg:py-1 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
+                  <div className="bg-gray-50 lg:py-5 py-5 mx-auto max-w-screen-2xl px-3 sm:px-10">
                    <div className=" flex justify-start">
                   <div className="justify-start w-full lg:w-2/5">
                     <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold">
@@ -154,32 +163,25 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
                         </div>
                       )}
 
-               {/*  banner*/}
-               <div className="block mx-auto max-w-screen-2xl py-5 ">
-                     <Image
-                        src={banner}
-                        alt="banner"
-                        className=""
-                      />
-              </div>
+              
           
             {/* top brands */}
-            <div className="lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10" >
+            {/* <div className="lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10" >
                   <h2 className="text-xl lg:text-2xl mb-2 font-serif font-semibold mb-10 flex justify-start" >Top Brands  </h2>
                   <Brandlogo />
-                  </div>
+                  </div> */}
 
             
 
             {/* top coupons */}
-               <div className="mx-auto max-w-screen-2xl px-4 py-10 lg:py-1 sm:px-10 ">
+               {/* <div className="mx-auto max-w-screen-2xl px-4 py-10 lg:py-1 sm:px-10 ">
                     <h2 className="text-xl lg:text-2xl mb-10 font-serif font-semibold flex justify-start ">
                     Featured Coupons
                     </h2>
                     <div className="grid gap-6 grid-cols-1 xl:grid-cols-2">
                       <Coupon />
                     </div>
-                </div>
+                </div> */}
 
 
             {/* popular products */}
@@ -260,7 +262,7 @@ const Home = ({ popularProducts, discountProducts, attributes }) => {
             {storeCustomizationSetting?.home?.discount_product_status && (
               <div
                 id="discount"
-                className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10"
+                className="bg-gray-50 lg:py-5 py-5 mx-auto max-w-screen-2xl px-3 sm:px-10"
               >
                 <div className="mb-10 flex justify-start">
                   <div className="justify-start w-full lg:w-2/5">

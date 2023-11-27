@@ -7,13 +7,20 @@ import useGetSetting from "@hooks/useGetSetting";
 import CMSkeleton from "@component/preloader/CMSkeleton";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 
+
 const CardTwo = () => {
   const { storeCustomizationSetting, error, loading } = useGetSetting();
   const { showingTranslateValue } = useUtilsFunction();
+  const img = require("../../../public/img/homebg/sellerbg.png");
+  
+  const styling = {
+    backgroundImage: `url('${img.default.src}')`,
+   
+}
 
   return (
     <>
-      <div className="w-full bg-blue-600 shadow-sm lg:px-10 lg:py-10 p-6 ">
+      <div style={styling} className="w-full bg-blue-600 shadow-sm lg:px-10 lg:py-10 p-6  bg-cover bg-no-repeat bg-bottom">
         <div className="flex justify-between items-center text-gray-50">
           <div className="lg:w-4/6 2xl:4/6" >
             <span className="text-base lg:text-lg ">

@@ -104,10 +104,10 @@ const NavbarPromo = () => {
                     )}
 
                     {storeCustomizationSetting?.navbar?.about_menu_status && (
-                      <Link href="/about-us" >
+                      <Link href="/stores" >
                         <a
                           onClick={() => setIsLoading(!isLoading)}
-                          className={router.pathname == "/about-us" ? "active font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}  
+                          className={router.pathname == "/stores" ? "active font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}  
                         >
                           Stores
                         </a>
@@ -116,15 +116,29 @@ const NavbarPromo = () => {
                     
 
                     {storeCustomizationSetting?.navbar?.contact_menu_status && (
-                      <Link href="/contact-us"  >
+                      <Link href="/offers"  >
                         <a
                           onClick={() => setIsLoading(!isLoading)}
-                          className={router.pathname == "/contact-us" ? "active font-serif mx-4 py-2 text-sm  font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}
+                          className={router.pathname == "/offers" ? "active font-serif mx-4 py-2 text-sm  font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}
                         >
                           {/* {showingTranslateValue(
                             storeCustomizationSetting?.navbar?.contact_us
                           )} */}
                           Offers
+                        </a>
+                      </Link>
+                    )}
+
+                {storeCustomizationSetting?.navbar?.contact_menu_status && (
+                      <Link href="/products"  >
+                        <a
+                          onClick={() => setIsLoading(!isLoading)}
+                          className={router.pathname == "/products" ? "active font-serif mx-4 py-2 text-sm  font-medium hover:text-emerald-600" : " font-serif mx-4 py-2 text-sm font-medium hover:text-emerald-600"}
+                        >
+                          {/* {showingTranslateValue(
+                            storeCustomizationSetting?.navbar?.contact_us
+                          )} */}
+                         Products
                         </a>
                       </Link>
                     )}
@@ -307,7 +321,7 @@ const NavbarPromo = () => {
                     </Popover> */}
                    
                     {storeCustomizationSetting?.navbar?.offers_menu_status && (
-                      <Link href="/offer" className={router.pathname == "/offer" ? "active" : ""}>
+                      <Link href="/myfavourites" className={router.pathname == "/myfavourites" ? "active" : ""}>
                         <a
                           onClick={() => setIsLoading(!isLoading)}
                           className="relative inline-flex items-center bg-red-100 font-serif ml-4 py-0 px-2 rounded text-sm font-medium text-red-500 hover:text-emerald-600"

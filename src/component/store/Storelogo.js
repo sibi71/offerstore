@@ -95,23 +95,22 @@ const Storelogo = () => {
           },
         }}
        
-        className="mySwiper category-slider  store-slider mb-10 mx-auto"
+        className="mySwiper category-slider  store-slider  mx-auto"
       >
 
         {storelogodata.map((storelogo, i) => (
               <SwiperSlide key={i} className="group">
                 <div
-                  className="text-center cursor-pointer p-3  rounded-lg"
+                  className="text-center cursor-pointer p-3  "
                 >
-                  <div className="bg-white p-2 mx-auto w-32 h-32 rounded-full  border-solid border-2 border-black-500 flex justify-center items-center content-center ">
+                  <div className=" p-2 mx-auto w-60 h-60  flex justify-center items-center content-center ">
                     
                       <Image
                         src={storelogo.img}
                         alt="storelogo"
-                        width="100"
-                        height="100"
-                        onClick={() => handleMoreInfo(product.slug)}
-                        className="rounded-full"
+                        width="300"
+                        height="300"
+                        className=""
                       />
                    
                   </div>

@@ -70,7 +70,7 @@ const NavBarTop = () => {
             <div className="lg:text-right flex items-center navBar">
               {storeCustomizationSetting?.navbar?.about_menu_status && (
                 <div>
-                  <Link href="/stores">
+                  <Link href="/about-uss">
                     <a className="font-medium hover:text-emerald-600">
                       {showingTranslateValue(
                         storeCustomizationSetting?.navbar?.about_us
@@ -82,7 +82,7 @@ const NavBarTop = () => {
               )}
               {storeCustomizationSetting?.navbar?.contact_menu_status && (
                 <div>
-                  <Link href="/offers">
+                  <Link href="/contact-uss">
                     <a className="font-medium hover:text-emerald-600">
                       {showingTranslateValue(
                         storeCustomizationSetting?.navbar?.contact_us

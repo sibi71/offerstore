@@ -162,7 +162,7 @@ const Coupon = ({ couponInHome }) => {
                 />
               </figure>
               <div className="ml-5">
-                {dayjs().isAfter(dayjs(coupon.endTime)) ? (
+                {/* {dayjs().isAfter(dayjs(coupon.endTime)) ? (
                   <span className="inline-block mb-2">
                     <div className="flex items-center font-semibold">
                       <span className="flex items-center justify-center bg-red-100 text-sm font-serif font-semibold px-2 py-1 rounded mx-1">
@@ -188,7 +188,7 @@ const Coupon = ({ couponInHome }) => {
                       <OfferTimer expiryTimestamp={new Date(coupon.endTime)} />
                     </div>
                   </span>
-                )}
+                )} */}
 
                 <h2 className="font-serif text-lg leading-6 font-medium mb-3">
                   {showingTranslateValue(coupon?.title)}
@@ -223,8 +223,35 @@ const Coupon = ({ couponInHome }) => {
                         )}
                       </div>
                     </div>
+                    {dayjs().isAfter(dayjs(coupon.endTime)) ? (
+                  <span className="inline-block mb-2">
+                    <div className="flex items-center font-semibold">
+                      <span className="flex items-center justify-center bg-red-100 text-sm font-serif font-semibold px-2 py-1 rounded mx-1">
+                        00
+                      </span>
+                      :
+                      <span className="flex items-center justify-center bg-red-100 text-sm font-serif font-semibold px-2 py-1 rounded mx-1">
+                        00
+                      </span>
+                      :
+                      <span className="flex items-center justify-center bg-red-100 text-sm font-serif font-semibold px-2 py-1 rounded mx-1">
+                        00
+                      </span>
+                      :
+                      <span className="flex items-center justify-center bg-red-100 text-sm font-serif font-semibold px-2 py-1 rounded mx-1">
+                        00
+                      </span>
+                    </div>
+                  </span>
+                ) : (
+                  <span className="inline-block mb-2">
+                    <div className="flex items-center font-semibold">
+                      <OfferTimer expiryTimestamp={new Date(coupon.endTime)} />
+                    </div>
+                  </span>
+                )}
 
-                    <div className="font-serif border border-dashed bg-emerald-50 py-2 border-emerald-300 rounded-lg text-center block">
+                  <div className="font-serif border border-dashed bg-emerald-50 py-2 border-emerald-300 rounded-lg text-center block">
                       <CopyToClipboard
                         text={coupon.couponCode}
                         onCopy={() => handleCopied(coupon.couponCode)}
@@ -243,13 +270,13 @@ const Coupon = ({ couponInHome }) => {
                       </CopyToClipboard>
                     </div>
                   </div>
-                  <p className="text-xs leading-5 text-gray-500 mt-2">
+                  {/* <p className="text-xs leading-5 text-gray-500 mt-2">
                     * This coupon code will apply on when you shopping more then{" "}
                     <span className="font-bold text-gray-700">
                       {currency}
                       {coupon.minimumAmount}
                     </span>{" "}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

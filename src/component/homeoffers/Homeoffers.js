@@ -124,9 +124,10 @@ const Homeoffers = ({ popularProducts }) => {
                                     onClick={() => handleModalOpen(!modalOpen, product._id)}
                                   />
 
-                                  <div className='flex justify-between w-full px-2 '>
-                                  <h5 className='text-xl lg:text-3xl mb-2 font-serif font-semibold text-gray-50 homeoffers_time'>40 <span>%</span></h5>
-                                  <h2 className="text-xl  mb-2  ">
+                                  <div className='flex flex-col justify-start text-start  w-full px-3 pb-5 '>
+
+                                  <div className='homeoffer_brandslogo'> 
+                                  <h2 className="text-md  ">
                                     <CMSkeleton
                                       count={1}
                                       height={30}
@@ -135,12 +136,15 @@ const Homeoffers = ({ popularProducts }) => {
                                       data={product.title}
                                       
                                     />
-                                  </h2>
+                                  </h2></div>
+                                 
+                                  <p className='text-xs text-gray-500 mt-5'>Purchase all grocery products with more offers...</p>
+
                                  
                                   <button
                                 onClick={() => handleAddItem(product)}
                                 aria-label="cart"
-                                className="h-9 w-9 flex items-center justify-center  rounded-full text-orange-600  hover:bg-orange-600 hover:text-white transition-all"
+                                className="h-9 w-9 flex items-center justify-center  rounded-full text-orange-600  hover:bg-orange-600 hover:text-white transition-all homeoffers_time"
                             >
                               {" "}
                               <span className="text-xl">

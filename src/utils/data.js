@@ -45,6 +45,7 @@ const pages = [
     href: "/about-us",
     icon: FiUsers,
   },
+ 
   {
     title: "Offers",
     href: "/contact-us",
@@ -65,6 +66,7 @@ const pages = [
     href: "/404",
     icon: FiAlertCircle,
   },
+ 
 ];
 
 

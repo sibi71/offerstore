@@ -1,8 +1,8 @@
 {
-  "name": "kachabazar-store",
+  "name": "offers-store",
   "version": "0.1.0",
-  "description": "this is kachabazar-store built with next.js and tailwindcss",
-  "homepage": "https://kachabazar-store.vercel.app/",
+  "description": "this is offers-store built with next.js and tailwindcss",
+  "homepage": "https://offers.vercel.app/",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,6 +16,7 @@
     "@googlemaps/js-api-loader": "^1.16.2",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.5",
+    "@mui/material": "^5.14.18",
     "@next/eslint-plugin-next": "^12.0.0",
     "@react-oauth/google": "^0.2.6",
     "@react-pdf/renderer": "^3.1.9",

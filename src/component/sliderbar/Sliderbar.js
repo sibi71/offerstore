@@ -176,7 +176,8 @@ function valuetext(value) {
                   getAriaValueText={valuetext}
                   step={10}
                   marks={marks}
-                  valueLabelDisplay="on"
+                  valueLabelDisplay="on" 
+                  className="sliderbar_rangeinput"
                 />
               </Box>
               </div>

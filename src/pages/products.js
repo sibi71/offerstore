@@ -34,13 +34,17 @@ const ContactUs = ({discountProducts}) => {
 
   const submitHandler = () => {
     notifySuccess(
-      "your message sent successfully. We will contact you shortly."
+      "your message sent successfully. We will products you shortly."
     );
   };
 
   return (
-    <Layout title="offers" description="This is contact us page">
-    <Storelogo />
+    <Layout title="products" description="This is products  page">
+         <PageHeader
+        headerBg={storeCustomizationSetting?.about_us?.header_bg}
+        title={showingTranslateValue(storeCustomizationSetting?.about_us?.title)}
+      />
+    
     <div className="flex justify-between">
        <Sliderbar />
        {storeCustomizationSetting?.home?.discount_product_status && (

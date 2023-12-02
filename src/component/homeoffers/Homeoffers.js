@@ -124,7 +124,7 @@ const Homeoffers = ({ popularProducts }) => {
                                     onClick={() => handleModalOpen(!modalOpen, product._id)}
                                   />
 
-                                  <div className='flex flex-col justify-start text-start  w-full px-3 pb-5 '>
+                                  <div className='flex flex-col justify-start text-start   px-3 pb-5 '>
 
                                   <div className='homeoffer_brandslogo'> 
                                   <h2 className="text-md  ">

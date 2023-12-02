@@ -322,6 +322,7 @@ p:not(:last-of-type) {
 
 /* category slider */
 
+
 .homeoffers-slider .swiper-pagination{
   display: none;
 }
@@ -361,10 +362,10 @@ p:not(:last-of-type) {
   text-align: center;
   background-color: rgba(174, 174, 174, 0.658);
   color: #ffffff;
-  margin: 10px 2px 0 2px;
+  margin: 0 2px 0 2px;
   position: absolute;
   z-index: 10;
-  top: 30%;
+  top: 80px;
   font-size: 20px;
   border-radius: 999px;
   backdrop-filter: blur(2px);
@@ -1481,10 +1482,7 @@ p:not(:last-of-type) {
   height: 300px;
   overflow-y: scroll;
 }
-.sliderbardistance_min ,.sliderbardistance_max{
-  
 
-}
 .sliderbardistance_min_km ,.sliderbardistance_max_km{
  border: 2px solid gray;
  border-radius: 5px;
@@ -1769,15 +1767,43 @@ flex-direction: column;
 
 }
 
-.css-nnid7-MuiSlider-valueLabel {
+.MuiSlider-valueLabel {
   background-color: #009640 !important;
 }
-.css-187mznn-MuiSlider-root  {
+.MuiSlider-root  {
   color: #009640 !important ;
   margin-bottom: 0% !important;
   height: 10px !important;
   margin-top: 20px !important;
   padding: 20px 0 !important; 
+}
+/* offer */
+.offer_brandlogo{
+  width: 70vw;
+}
+.offer_favbtn{
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px;
+  margin : -320px 0px 0px 220px ;
+  border-radius:999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+.offer_all{
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px;
+ margin-left: 50px;
+ margin-top: -30px;
+  width: 150px;
+  border-radius:99px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
 

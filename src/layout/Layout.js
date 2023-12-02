@@ -20,7 +20,7 @@ const Layout = ({ title, description, children }) => {
               ? `OFFERS | ${title}`
               : "OFFERS"}
           </title>
-          {description && <meta name="description" content={description} />}
+          {description && <meta name="description" content={"new"} />}
           <link ref="icon" href="/favicon.png" />
         </Head>
         <NavBarTop />

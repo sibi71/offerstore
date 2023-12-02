@@ -20,8 +20,10 @@ import AttributeServices from "@services/AttributeServices";
 import Storelogo from "@component/store/Storelogo";
 import FeatureCategory from "@component/category/FeatureCategory";
 import Sliderbar from "@component/sliderbar/Sliderbar";
+import Homeoffers from "@component/homeoffers/Homeoffers";
+import OfferCardTwo from "@component/offer/OfferCardTwo";
 
-const ContactUs = ({discountProducts}) => {
+const ContactUs = ({ popularProducts, discountProducts, attributes }) => {
   const { t } = useTranslation();
   const {
     register,
@@ -34,18 +36,37 @@ const ContactUs = ({discountProducts}) => {
 
   const submitHandler = () => {
     notifySuccess(
-      "your message sent successfully. We will contact you shortly."
+      "your message sent successfully. We will offers you shortly."
     );
   };
 
   return (
-    <Layout title="offers" description="This is contact us page">
-    <Storelogo />
+    <Layout title="offers" description="This is offers  page">
+      <PageHeader
+        headerBg={storeCustomizationSetting?.about_us?.header_bg}
+        title={showingTranslateValue(storeCustomizationSetting?.about_us?.title)}
+      />
     <div className="flex justify-between">
        <Sliderbar />
-       {storeCustomizationSetting?.home?.discount_product_status && (
-              <div className="bg-gray-50 lg:py-16 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10">
-               
+      
+      <div className="offer_brandlogo bg-gray-50 lg:py-16 py-10 mx-auto  px-3 sm:px-10 flex-col flex">
+
+        <div className="text-xl font-medium capitalize " >
+          <h1>Get Offers by stores</h1>
+            {/* brandlogo */}
+        <Storelogo />
+        </div>
+          {/* top offer */}
+            <div className="text-xl font-medium capitalize ">
+            <h1>Offers Of the day</h1>
+            <Homeoffers popularProducts={popularProducts} />
+            </div>
+        {/* all offer */}
+        <div className="text-xl font-medium capitalize "> 
+        <h1>All Offers</h1>
+
+         {storeCustomizationSetting?.home?.popular_products_status && (
+              <div className="bg-gray-50 lg:py-10 py-10 mx-auto max-w-screen-2xl px-3 sm:px-10"> 
                 <div className="flex">
                   <div className="w-full">
                     {loading ? (
@@ -56,19 +77,19 @@ const ContactUs = ({discountProducts}) => {
                         loading={loading}
                       />
                     ) : (
-                      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-2 md:gap-3 lg:gap-3">
-                        {discountProducts
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-2 md:gap-3 lg:gap-3">
+                        {popularProducts
                           ?.slice(
                             0,
                             storeCustomizationSetting?.home
-                              ?.discount_product_limit
+                              ?.popular_product_limit
                           )
                           .map((product) => (
 
                             <>
-                            <ProductCard
+                              <OfferCardTwo
                               key={product._id}
-                              product={product}
+                              product={product} 
                               />
                             
 
@@ -81,7 +102,12 @@ const ContactUs = ({discountProducts}) => {
                 </div>
               </div>
             )}
-             </div>
+        </div>
+       
+      </div>
+       </div>
+
+    
        
     </Layout>
   );
@@ -99,7 +125,7 @@ export const getServerSideProps = async (context) => {
     AttributeServices.getShowingAttributes(),
   ]);
 
-  const popularProducts = data?.products;
+  const popularProducts = data?.products.filter((p) => p.prices.discount < 1);
 
   const discountProducts = data?.products.filter(
     (p) => p.prices?.discount >= 1

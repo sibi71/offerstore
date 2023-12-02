@@ -42,7 +42,7 @@ const ContactUs = ({discountProducts}) => {
     <Layout title="products" description="This is products  page">
          <PageHeader
         headerBg={storeCustomizationSetting?.about_us?.header_bg}
-        title={showingTranslateValue(storeCustomizationSetting?.about_us?.title)}
+       
       />
     
     <div className="flex justify-between">

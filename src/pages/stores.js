@@ -56,7 +56,7 @@ const AboutUs = ({popularProducts}) => {
                       <>
                       <div className="mb-5">
                         <h2 className="mb-2 text-2xl font-semibold capitalize">Most Viewed Stores</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-2 md:gap-3 lg:gap-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-2 md:gap-3 lg:gap-5">
                         {
                           mostviewsstore.map((store ,index)=>{
                             return (
@@ -64,10 +64,10 @@ const AboutUs = ({popularProducts}) => {
                                 {store?.img ? (
                                       <Image
                                         src={store.img}
-                                        width={130}
+                                        
                                         height={60}
                                         alt="store"
-                                        className=" transition duration-150 ease-linear transform group-hover:scale-105 homeOffer_img  flex justify-items-center "
+                                        className=" object-contain transition duration-150 ease-linear transform hover:scale-105"
                                       />
                                     ) : (
                                       <Image
@@ -75,7 +75,7 @@ const AboutUs = ({popularProducts}) => {
                                         width={150}
                                         height={150}
                                         alt="store"
-                                        className="object-cover transition duration-150 ease-linear transform group-hover:scale-105"
+                                        className="object-cover transition duration-150 ease-linear transform hover:scale-105"
                                       />
                                     )}
                                    <div>
@@ -99,40 +99,43 @@ const AboutUs = ({popularProducts}) => {
                           })
                         }
                       </div>
-                         <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-2 md:gap-3 lg:gap-5">
+                         <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-2 md:gap-3 lg:gap-5">
                         {
                           storesdata.map((store ,index)=>{
                             return (
-                              <Link href={`/${store.title}`}>
+                             
                               <div key={index} className="stores_container bg-gray-50  p-2 ">
                                 {store?.img ? (
+                                   <Link href={`/${store.title}`}>
                                       <Image
                                         src={store.img}
                                         width={120}
                                         height={60}
                                         alt="store"
-                                        className=" transition duration-150 ease-linear transform group-hover:scale-105 homeOffer_img "
+                                        className="object-contain transition duration-150 ease-linear transform hover:scale-105 homeOffer_img "
                                       />
+                                      </Link>
                                     ) : (
                                       <Image
                                         src="https://res.cloudinary.com/ahossain/image/upload/v1655097002/placeholder_kvepfp.png"
                                         width={150}
                                         height={150}
                                         alt="store"
-                                        className="object-cover transition duration-150 ease-linear transform group-hover:scale-105"
+                                        className="object-cover transition duration-150 ease-linear transform hover:scale-105"
                                       />
+                                      
                                     )}
                                    <div>
                                 </div>
-                                <span className="store_offer ">{store.offers}</span>
-                                <div className="stores_details w-28 ">
+                                {/* <span className="store_offer ">{store.offers}</span> */}
+                                <div className="stores_details object-contain ">
                                 <h5 className="">{store.title}</h5>
                                 <p>{store.offers} Coupons</p>
                                 </div>
                                 <span className="store_icon" ><AiOutlineHeart size={24} /></span>
                                
                               </div>
-                              </Link>
+                             
                             )
                           })
                         }

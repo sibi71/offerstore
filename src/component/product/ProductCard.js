@@ -14,6 +14,7 @@ import Discount from "@component/common/Discount";
 import useUtilsFunction from "@hooks/useUtilsFunction";
 import ProductModal from "@component/modal/ProductModal";
 import useGetSetting from "@hooks/useGetSetting";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const ProductCard = ({ product, attributes }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -128,34 +129,47 @@ console.log(product);
                 {items.map(
                   (item) =>
                     item.id === product._id && (
-                      <div
-                        key={item.id}
-                        className="h-9 w-auto flex flex-wrap items-center justify-evenly py-1 px-2 bg-emerald-500 text-white rounded"
-                      >
-                        <button
-                          onClick={() =>
-                            updateItemQuantity(item.id, item.quantity - 1)
-                          }
-                        >
-                          <span className="text-dark text-base">
-                            <IoRemove />
-                          </span>
-                        </button>
-                        <p className="text-sm text-dark px-1 font-serif font-semibold">
-                          {item.quantity}
-                        </p>
-                        <button
-                          onClick={() =>
-                            item?.variants?.length > 0
-                              ? handleAddItem(item)
-                              : handleIncreaseQuantity(item)
-                          }
-                        >
-                          <span className="text-dark text-base">
-                            <IoAdd />
-                          </span>
-                        </button>
-                      </div>
+                      // <div
+                      //   key={item.id}
+                      //   className="h-9 w-auto flex flex-wrap items-center justify-evenly py-1 px-2 bg-emerald-500 text-white rounded"
+                      // >
+                      //   <button
+                      //     onClick={() =>
+                      //       updateItemQuantity(item.id, item.quantity - 1)
+                      //     }
+                      //   >
+                      //     <span className="text-dark text-base">
+                      //       <IoRemove />
+                      //     </span>
+                      //   </button>
+                      //   {/* <p className="text-sm text-dark px-1 font-serif font-semibold">
+                      //     {item.quantity}
+                      //   </p> */}
+                      //   <button
+                      //     // onClick={() =>
+                      //     //   item?.variants?.length > 0
+                      //     //     ? handleAddItem(item)
+                      //     //     : handleIncreaseQuantity(item)
+                      //     // }
+                      //   >
+                      //     <span className="text-dark text-base">
+                      //       <IoAdd />
+                      //     </span>
+                      //   </button>
+                      // </div>
+                      <button
+                      onClick={() =>
+                              updateItemQuantity(item.id, item.quantity - 1)
+                            }
+                aria-label="cart"
+                className="h-9 w-9 flex items-center justify-center   text-red-600   transition-all"
+              >
+                {" "}
+                <span className="text-xl">
+                  <AiFillHeart />
+                </span>{" "}
+              </button>
+
                     )
                 )}{" "}
               </div>
@@ -163,11 +177,11 @@ console.log(product);
               <button
                 onClick={() => handleAddItem(product)}
                 aria-label="cart"
-                className="h-9 w-9 flex items-center justify-center border border-gray-200 rounded text-orange-600 hover:bg-orange-600 hover:bg-emerald-500 hover:text-white transition-all"
+                className="h-9 w-9 flex items-center justify-center border border-gray-200 rounded-full text-orange-600 hover:bg-orange-600 hover:bg-emerald-500 hover:text-white transition-all"
               >
                 {" "}
                 <span className="text-xl">
-                  <IoBagAddSharp />
+                  <AiOutlineHeart />
                 </span>{" "}
               </button>
             )}

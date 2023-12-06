@@ -1730,7 +1730,10 @@ background-color: transparent;
 
 }
 .store_icon svg{
-  color: #f15a29;
+  color: #f12929;
+}
+.fav_icon svg{
+  color: #f12929;
 }
 
 .storepgheader_img{
@@ -1782,10 +1785,7 @@ flex-direction: column;
   width: 70vw;
 }
 .offer_favbtn{
-  position: absolute;
-  background-color: #ffffff;
-  padding: 10px;
-  margin : -320px 0px 0px 220px ;
+ 
   border-radius:999px;
   display: flex;
   justify-content: center;
@@ -1796,8 +1796,8 @@ flex-direction: column;
   position: absolute;
   background-color: #ffffff;
   padding: 10px;
- margin-left: 50px;
- margin-top: -30px;
+  margin-left: 50px;
+  margin-top: -30px;
   width: 150px;
   border-radius:99px;
   display: flex;

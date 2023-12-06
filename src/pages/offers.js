@@ -44,7 +44,7 @@ const ContactUs = ({ popularProducts, discountProducts, attributes }) => {
     <Layout title="offers" description="This is offers  page">
       <PageHeader
         headerBg={storeCustomizationSetting?.about_us?.header_bg}
-        title={showingTranslateValue(storeCustomizationSetting?.about_us?.title)}
+      
       />
     <div className="flex justify-between">
        <Sliderbar />

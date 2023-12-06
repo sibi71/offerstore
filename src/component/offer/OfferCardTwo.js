@@ -11,9 +11,10 @@ const OfferCardTwo = ({product} ) => {
     const [modalOpen, setModalOpen] = useState(false);
     const handleModalOpen = (event, id) => {
         setModalOpen(event);
-        console.log(id);
+
       };
 
+   
       
   return (
     <>
@@ -30,7 +31,7 @@ const OfferCardTwo = ({product} ) => {
             src={product.image[0]}
             alt="offers"
             width="300"
-            height="350"
+            height="300"
             className='homeOffer_img'
             onClick={() => handleModalOpen(!modalOpen, product._id)}
             />
@@ -49,20 +50,38 @@ const OfferCardTwo = ({product} ) => {
                     />
                     </h2>
                 </div>
-            
-                <p className='text-xs text-gray-500 mt-5'>Purchase all grocery products with more offers...</p>
-
+                
+              
+                <div className='flex lg:justify-between items-center sm:justify-center  mt-5'>
+                
+                <h2 className="text-base  text-green-600 font-semibold">
+                    <CMSkeleton
+                        count={1}
+                        height={10}
+                        // error={error}
+                        loading={loading}
+                        data={product.title}
+                        
+                    />
+                    </h2>
             
                 <button
                     onClick={() => handleAddItem(product)}
                     aria-label="cart"
-                    className="h-9 w-9 flex items-center justify-center  rounded-full text-orange-600  hover:bg-orange-600 hover:text-white transition-all offer_favbtn"
+                    className="h-9 w-9 flex items-center justify-center   text-red-600    transition-all "
                 >
                     {" "}
                     <span className="text-xl">
                     <AiOutlineHeart />
                     </span>{" "}
                 </button>
+                </div>
+                <p className='text-xs text-gray-500 '>Purchase all grocery products with more offers...</p>
+                <div className='flex lg:justify-between sm:justify-center  items-center text-xs  lg:mt-2 ' >
+                    <h5>+{product.stock}Pages</h5>
+                    <h5>Till {(product.updatedAt).slice(5 , 10)}</h5>
+                </div>
+              
             </div>
         </div>
      </div>

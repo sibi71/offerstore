@@ -68,6 +68,16 @@ const NavBarTop = () => {
             </span>
 
             <div className="lg:text-right flex items-center navBar">
+            {storeCustomizationSetting?.navbar?.about_menu_status && (
+                <div>
+                  <Link href="/seller">
+                    <a className="font-medium hover:text-emerald-600">
+                      Seller Admin
+                    </a>
+                  </Link>
+                  <span className="mx-2">|</span>
+                </div>
+              )}
               {storeCustomizationSetting?.navbar?.about_menu_status && (
                 <div>
                   <Link href="/about-uss">
@@ -92,6 +102,7 @@ const NavBarTop = () => {
                   <span className="mx-2">|</span>
                 </div>
               )}
+
               <button
                 onClick={handleModal}
                 className="font-medium hover:text-emerald-600"
